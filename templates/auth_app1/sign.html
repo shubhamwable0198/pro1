@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+    {% block tilte %}
+    <title>sign</title>
+    {% endblock %}
+
+
+{% block data %}
+
+<div class="container">
+    <h2>Sign Up Form</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{form|crispy}}
+        <input type="submit" class="btn btn-success">
+        <input type="reset" class="btn btn-warning">
+
+    </form>
+
+
+</div>
+
+
+{% endblock %}

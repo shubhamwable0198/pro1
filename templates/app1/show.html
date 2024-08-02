@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+<title>show</title>
+{% endblock %}
+
+
+{% block data %}
+
+<h2>Show Data</h2>
+<table class="table table-dark strips">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Salary</th>
+            <th>Dob</th>
+            <th>City</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <thead>
+        {% for i in obj %}
+        <tr>
+            <td>{{i.eid}}</td>
+            <td>{{i.name}}</td>
+            <td>{{i.salary}}</td>
+            <td>{{i.dob}}</td>
+            <td>{{i.city}}</td>
+            <td>
+                <a href="{% url 'update' i.eid %}" class="btn btn-success">UPDATE</a>
+                <a href="{% url 'delete' i.eid %}" class="btn btn-danger">DELETE</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </thead>
+</table>
+
+
+
+{% endblock %}
